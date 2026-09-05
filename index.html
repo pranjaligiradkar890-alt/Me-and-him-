@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>after dark — us ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#070917;
+    color:#eeeaff;
+    overflow-x:hidden;
+    font-family:"Cormorant Garamond",serif;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+/* =====================================================
+   PAGE BASE
+===================================================== */
+
+.page{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    padding:90px 7vw;
+    background:#080a18;
+}
+
+
+/* =====================================================
+   NIGHT CITY BACKGROUNDS
+===================================================== */
+
+.cover{
+    background:
+        linear-gradient(
+            rgba(5,7,20,.62),
+            rgba(5,7,20,.90)
+        ),
+        url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+.memory{
+    background:
+        linear-gradient(
+            rgba(8,14,35,.78),
+            rgba(8,10,25,.94)
+        ),
+        url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+}
+
+.proud{
+    background:
+        linear-gradient(
+            rgba(15,8,32,.82),
+            rgba(8,7,23,.95)
+        ),
+        url("https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+}
+
+.night-photos{
+    background:
+        linear-gradient(
+            rgba(5,15,32,.72),
+            rgba(7,8,24,.95)
+        ),
+        url("https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+}
+
+.future{
+    background:
+        linear-gradient(
+            rgba(8,8,27,.76),
+            rgba(6,7,22,.95)
+        ),
+        url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+}
+
+.final{
+    background:
+        linear-gradient(
+            rgba(5,7,20,.50),
+            rgba(5,7,20,.90)
+        ),
+        url("https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+
+/* =====================================================
+   PAPER / SCRAPBOOK TEXTURE
+===================================================== */
+
+.page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 31px,
+            rgba(180,160,255,.07) 32px
+        );
+
+    opacity:.55;
+}
+
+
+/* =====================================================
+   NEON LIGHT
+===================================================== */
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    pointer-events:none;
+    opacity:.23;
+    z-index:0;
+}
+
+.glow.pink{
+    width:280px;
+    height:280px;
+    background:#ff3fa4;
+    top:5%;
+    left:-70px;
+}
+
+.glow.blue{
+    width:330px;
+    height:330px;
+    background:#3978ff;
+    right:-120px;
+    top:35%;
+}
+
+.glow.purple{
+    width:300px;
+    height:300px;
+    background:#984cff;
+    bottom:5%;
+    left:35%;
+}
+
+
+/* =====================================================
+   FONTS
+===================================================== */
+
+.hand{
+    font-family:"Caveat",cursive;
+}
+
+.smallhand{
+    font-family:"Patrick Hand",cursive;
+}
+
+.mono{
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+
+/* =====================================================
+   STICKERS
+===================================================== */
+
+.sticker{
+    position:absolute;
+    z-index:50;
+    user-select:none;
+    filter:drop-shadow(0 5px 5px rgba(0,0,0,.5));
+    pointer-events:none;
+}
+
+.heart{
+    color:#ff73b3;
+    font-size:42px;
+}
+
+.star{
+    color:#d6caff;
+    font-size:34px;
+}
+
+.moon{
+    font-size:48px;
+}
+
+.sparkle{
+    color:#8edcff;
+    font-size:34px;
+}
+
+.city{
+    font-size:39px;
+}
+
+.ticket{
+    font-size:36px;
+}
+
+.camera{
+    font-size:35px;
+}
+
+.coffee{
+    font-size:35px;
+}
+
+.music{
+    font-size:34px;
+}
+
+.sticker.a{
+    top:7%;
+    left:5%;
+    transform:rotate(-9deg);
+}
+
+.sticker.b{
+    top:10%;
+    right:6%;
+    transform:rotate(10deg);
+}
+
+.sticker.c{
+    bottom:7%;
+    left:5%;
+    transform:rotate(-7deg);
+}
+
+.sticker.d{
+    bottom:7%;
+    right:6%;
+    transform:rotate(8deg);
+}
+
+.sticker.e{
+    top:45%;
+    left:3%;
+    transform:rotate(12deg);
+}
+
+
+/* =====================================================
+   SCRAPBOOK TAPE
+===================================================== */
+
+.tape{
+    position:absolute;
+    width:125px;
+    height:28px;
+    opacity:.75;
+    z-index:40;
+}
+
+.tape.pink{
+    background:#ff639f;
+}
+
+.tape.blue{
+    background:#55bfff;
+}
+
+.tape.purple{
+    background:#a97cff;
+}
+
+.tape.one{
+    top:55px;
+    left:13%;
+    transform:rotate(-7deg);
+}
+
+.tape.two{
+    top:55px;
+    right:13%;
+    transform:rotate(8deg);
+}
+
+.tape.three{
+    bottom:9%;
+    left:8%;
+    transform:rotate(8deg);
+}
+
+
+/* =====================================================
+   COVER
+===================================================== */
+
+.cover{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.cover-center{
+    width:min(780px,90%);
+    position:relative;
+    z-index:20;
+}
+
+.cover-small{
+    font-family:"DM Mono",monospace;
+    color:#91dcff;
+    letter-spacing:5px;
+    font-size:10px;
+}
+
+.cover h1{
+    font-family:"Caveat",cursive;
+    font-size:clamp(90px,15vw,165px);
+    font-weight:500;
+    color:#ff71b2;
+    line-height:.75;
+    margin:35px 0;
+    transform:rotate(-3deg);
+
+    text-shadow:
+        0 0 15px rgba(255,80,160,.5),
+        0 0 45px rgba(255,80,160,.2);
+}
+
+.cover-sub{
+    font-size:27px;
+    color:#e1deee;
+    font-style:italic;
+}
+
+.cover-note{
+    width:230px;
+    margin:60px auto 0;
+    padding:22px;
+
+    background:#18162d;
+    border:1px solid #5b4e83;
+
+    box-shadow:8px 12px 25px rgba(0,0,0,.45);
+
+    transform:rotate(5deg);
+
+    font-family:"Caveat",cursive;
+    font-size:23px;
+    text-align:left;
+    color:#e8ddff;
+
+    position:relative;
+}
+
+.cover-note::before{
+    content:"";
+    position:absolute;
+    width:95px;
+    height:20px;
+    top:-11px;
+    left:65px;
+    background:#ff629e;
+    opacity:.65;
+    transform:rotate(-4deg);
+}
+
+
+/* =====================================================
+   MEMORY PAGE
+===================================================== */
+
+.memory{
+    min-height:1150px;
+}
+
+.memory-title{
+    position:relative;
+    z-index:20;
+    width:max-content;
+
+    font-family:"Caveat",cursive;
+    font-size:65px;
+    line-height:.78;
+    color:#ddd5ff;
+
+    transform:rotate(-3deg);
+
+    margin-top:10px;
+}
+
+.memory-title span{
+    color:#ff70b0;
+}
+
+.date{
+    position:absolute;
+    top:105px;
+    right:12%;
+
+    background:#15162d;
+    border:1px solid #62538c;
+
+    padding:14px 20px;
+
+    transform:rotate(5deg);
+
+    font-family:"Patrick Hand",cursive;
+    font-size:18px;
+    color:#d1edff;
+
+    z-index:25;
+
+    box-shadow:5px 7px 15px rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   PHOTO CARDS
+===================================================== */
+
+.photo{
+    position:absolute;
+    background:#eee9df;
+    padding:11px;
+
+    box-shadow:
+        8px 14px 28px rgba(0,0,0,.55);
+
+    z-index:15;
+}
+
+.photo::after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1px solid rgba(0,0,0,.12);
+    pointer-events:none;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#d7d2c8;
+}
+
+
+/* memory photos */
+
+.photo.one{
+    width:360px;
+    height:440px;
+    left:8%;
+    top:280px;
+    transform:rotate(-5deg);
+}
+
+.photo.two{
+    width:325px;
+    height:400px;
+    right:9%;
+    top:500px;
+    transform:rotate(6deg);
+}
+
+
+/* =====================================================
+   MEMORY NOTES
+===================================================== */
+
+.thought{
+    position:absolute;
+    z-index:25;
+
+    width:270px;
+
+    font-family:"Caveat",cursive;
+    font-size:29px;
+    line-height:1.05;
+
+    color:#e0d9ff;
+}
+
+.thought.one{
+    left:43%;
+    top:315px;
+    transform:rotate(-3deg);
+}
+
+.thought.two{
+    left:20%;
+    top:820px;
+    transform:rotate(3deg);
+}
+
+.thought.one::after{
+    content:" ♡";
+    color:#ff6fac;
+}
+
+.thought.two::after{
+    content:" ✦";
+    color:#8fdcff;
+}
+
+
+/* =====================================================
+   PROUD PAGE
+===================================================== */
+
+.proud{
+    min-height:1150px;
+}
+
+.proud-title{
+    position:relative;
+    z-index:20;
+
+    width:450px;
+
+    font-family:"Caveat",cursive;
+    font-size:68px;
+    line-height:.8;
+    color:#ff72b3;
+
+    transform:rotate(-3deg);
+}
+
+.proud-sub{
+    position:relative;
+    z-index:20;
+
+    margin-top:22px;
+    margin-left:20px;
+
+    font-family:"Patrick Hand",cursive;
+    font-size:20px;
+    color:#c2cbe5;
+    transform:rotate(-2deg);
+}
+
+
+/* proud notes */
+
+.proud-note{
+    position:absolute;
+    z-index:20;
+
+    width:290px;
+    min-height:205px;
+
+    padding:27px;
+
+    box-shadow:7px 12px 25px rgba(0,0,0,.42);
+}
+
+.proud-note h3{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.proud-note p{
+    font-family:"Patrick Hand",cursive;
+    font-size:19px;
+    line-height:1.3;
+}
+
+.proud-one{
+    top:320px;
+    left:10%;
+
+    background:#21193c;
+    border:1px solid #8066b8;
+
+    transform:rotate(-4deg);
+}
+
+.proud-two{
+    top:330px;
+    right:10%;
+
+    background:#28162f;
+    border:1px solid #a84e91;
+
+    transform:rotate(5deg);
+}
+
+.proud-three{
+    bottom:170px;
+    left:38%;
+
+    background:#101e38;
+    border:1px solid #527eb4;
+
+    transform:rotate(-3deg);
+}
+
+.proud-thought{
+    position:absolute;
+    z-index:20;
+
+    left:39%;
+    top:600px;
+
+    width:250px;
+
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    line-height:1;
+
+    color:#bfe6ff;
+
+    transform:rotate(4deg);
+}
+
+
+/* =====================================================
+   NIGHT PHOTOS
+===================================================== */
+
+.night-photos{
+    min-height:1200px;
+}
+
+.night-note{
+    position:relative;
+    z-index:20;
+
+    width:350px;
+    margin-left:auto;
+    margin-right:5%;
+
+    font-family:"Caveat",cursive;
+    font-size:37px;
+    line-height:.95;
+
+    color:#ff78b7;
+    transform:rotate(3deg);
+}
+
+
+/* photos */
+
+.photo.three{
+    width:360px;
+    height:450px;
+
+    left:9%;
+    top:270px;
+
+    transform:rotate(5deg);
+}
+
+.photo.four{
+    width:325px;
+    height:410px;
+
+    right:9%;
+    top:590px;
+
+    transform:rotate(-5deg);
+}
+
+
+/* photo captions */
+
+.photo-note{
+    position:absolute;
+    z-index:25;
+
+    width:220px;
+
+    font-family:"Patrick Hand",cursive;
+    font-size:21px;
+    line-height:1.2;
+
+    color:#ddd7ef;
+}
+
+.photo-note.one{
+    left:43%;
+    top:430px;
+    transform:rotate(-3deg);
+}
+
+.photo-note.two{
+    left:22%;
+    bottom:190px;
+    transform:rotate(4deg);
+}
+
+.arrow{
+    position:absolute;
+    z-index:30;
+
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#80d5ff;
+}
+
+.arrow.one{
+    left:40%;
+    top:385px;
+    transform:rotate(-8deg);
+}
+
+.arrow.two{
+    left:37%;
+    bottom:250px;
+    transform:rotate(5deg);
+}
+
+
+/* =====================================================
+   FUTURE PAGE
+===================================================== */
+
+.future{
+    min-height:1250px;
+}
+
+.future-title{
+    position:relative;
+    z-index:20;
+    text-align:center;
+}
+
+.future-title .tiny{
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:4px;
+    color:#8fdcff;
+}
+
+.future-title h2{
+    font-family:"Caveat",cursive;
+    font-size:80px;
+    font-weight:500;
+    color:#ff71b3;
+    line-height:.8;
+
+    margin:22px 0;
+
+    transform:rotate(-2deg);
+}
+
+.future-title p{
+    font-size:22px;
+    color:#d5d2e5;
+    font-style:italic;
+}
+
+
+/* future cards */
+
+.future-card{
+    position:absolute;
+    z-index:20;
+
+    width:305px;
+    min-height:190px;
+
+    padding:27px;
+
+    box-shadow:7px 12px 25px rgba(0,0,0,.42);
+}
+
+.future-card h3{
+    font-family:"Caveat",cursive;
+    font-size:34px;
+    font-weight:500;
+    margin-bottom:11px;
+}
+
+.future-card p{
+    font-family:"Patrick Hand",cursive;
+    font-size:19px;
+    line-height:1.3;
+}
+
+.future-one{
+    top:290px;
+    left:8%;
+
+    background:#101d38;
+    border:1px solid #4b79aa;
+
+    transform:rotate(-4deg);
+}
+
+.future-two{
+    top:400px;
+    right:8%;
+
+    background:#28152f;
+    border:1px solid #a34e91;
+
+    transform:rotate(5deg);
+}
+
+.future-three{
+    bottom:250px;
+    left:18%;
+
+    background:#211a3d;
+    border:1px solid #735cb0;
+
+    transform:rotate(3deg);
+}
+
+.future-four{
+    bottom:105px;
+    right:16%;
+
+    background:#171f32;
+    border:1px solid #587e9f;
+
+    transform:rotate(-4deg);
+}
+
+.future-sticker{
+    position:absolute;
+    z-index:25;
+
+    font-family:"Caveat",cursive;
+    font-size:28px;
+    color:#ff75b5;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter-page{
+    min-height:1100px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.letter{
+    width:min(760px,90%);
+
+    position:relative;
+    z-index:20;
+
+    background:#111326;
+
+    border:1px solid #5a5279;
+
+    padding:70px 65px;
+
+    box-shadow:
+        10px 16px 40px rgba(0,0,0,.55);
+
+    transform:rotate(-1deg);
+}
+
+.letter::before{
+    content:"";
+
+    position:absolute;
+    inset:18px;
+
+    border:1px dashed rgba(160,145,210,.5);
+}
+
+.letter h2{
+    position:relative;
+    z-index:2;
+
+    font-family:"Caveat",cursive;
+    font-size:60px;
+    color:#ff72b4;
+    font-weight:500;
+
+    margin-bottom:25px;
+}
+
+.letter p{
+    position:relative;
+    z-index:2;
+
+    font-size:22px;
+    line-height:1.55;
+
+    color:#dedbea;
+}
+
+.signature{
+    position:relative;
+    z-index:2;
+
+    font-family:"Caveat",cursive;
+    font-size:47px;
+
+    color:#8edaff;
+
+    margin-top:35px;
+}
+
+
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+
+.final{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.final-inner{
+    position:relative;
+    z-index:20;
+}
+
+.final .small{
+    font-family:"DM Mono",monospace;
+    font-size:10px;
+    letter-spacing:4px;
+    color:#a9dfff;
+}
+
+.final h2{
+    font-family:"Caveat",cursive;
+
+    font-size:clamp(80px,14vw,150px);
+
+    color:#ff73b3;
+
+    font-weight:500;
+
+    line-height:.72;
+
+    margin:35px 0;
+
+    transform:rotate(-3deg);
+
+    text-shadow:
+        0 0 18px rgba(255,70,160,.45);
+}
+
+.final p{
+    font-size:25px;
+    color:white;
+    font-style:italic;
+}
+
+.final-heart{
+    font-size:48px;
+    color:#ff73b3;
+    margin-top:35px;
+}
+
+
+/* =====================================================
+   MOBILE — CLEAN STACKED SCRAPBOOK
+===================================================== */
+
+@media(max-width:700px){
+
+    .page{
+        padding:55px 20px;
+    }
+
+    .sticker{
+        transform:scale(.72);
+    }
+
+    /* COVER */
+
+    .cover h1{
+        font-size:90px;
+    }
+
+    .cover-sub{
+        font-size:22px;
+    }
+
+    .cover-note{
+        margin-top:55px;
+    }
+
+
+    /* MEMORY */
+
+    .memory{
+        min-height:1450px;
+    }
+
+    .memory-title{
+        font-size:52px;
+        margin-top:10px;
+    }
+
+    .date{
+        top:155px;
+        right:8%;
+    }
+
+    .photo.one{
+        width:260px;
+        height:325px;
+        left:5%;
+        top:250px;
+    }
+
+    .thought.one{
+        left:45%;
+        top:610px;
+        width:180px;
+        font-size:24px;
+    }
+
+    .photo.two{
+        width:250px;
+        height:315px;
+        right:4%;
+        top:800px;
+    }
+
+    .thought.two{
+        left:7%;
+        top:1160px;
+        width:220px;
+        font-size:25px;
+    }
+
+
+    /* PROUD */
+
+    .proud{
+        min-height:1450px;
+    }
+
+    .proud-title{
+        width:320px;
+        font-size:55px;
+    }
+
+    .proud-sub{
+        margin-top:18px;
+        width:280px;
+    }
+
+    .proud-note{
+        width:240px;
+        min-height:195px;
+    }
+
+    .proud-one{
+        top:270px;
+        left:4%;
+    }
+
+    .proud-two{
+        top:555px;
+        right:4%;
+    }
+
+    .proud-thought{
+        top:820px;
+        left:8%;
+        width:210px;
+    }
+
+    .proud-three{
+        bottom:180px;
+        left:8%;
+    }
+
+
+    /* NIGHT PHOTOS */
+
+    .night-photos{
+        min-height:1450px;
+    }
+
+    .night-note{
+        width:230px;
+        margin-left:auto;
+        margin-right:2%;
+        font-size:31px;
+    }
+
+    .photo.three{
+        width:260px;
+        height:325px;
+        left:4%;
+        top:285px;
+    }
+
+    .photo-note.one{
+        left:48%;
+        top:640px;
+        width:175px;
+    }
+
+    .photo.four{
+        width:250px;
+        height:315px;
+        right:4%;
+        top:850px;
+    }
+
+    .photo-note.two{
+        left:7%;
+        bottom:160px;
+        width:210px;
+    }
+
+    .arrow.one{
+        left:48%;
+        top:570px;
+    }
+
+    .arrow.two{
+        left:45%;
+        bottom:220px;
+    }
+
+
+    /* FUTURE */
+
+    .future{
+        min-height:1500px;
+    }
+
+    .future-title h2{
+        font-size:61px;
+    }
+
+    .future-title p{
+        font-size:19px;
+    }
+
+    .future-card{
+        width:245px;
+        min-height:190px;
+    }
+
+    .future-one{
+        top:260px;
+        left:4%;
+    }
+
+    .future-two{
+        top:550px;
+        right:4%;
+    }
+
+    .future-three{
+        bottom:370px;
+        left:4%;
+    }
+
+    .future-four{
+        bottom:105px;
+        right:4%;
+    }
+
+
+    /* LETTER */
+
+    .letter-page{
+        min-height:1100px;
+    }
+
+    .letter{
+        width:92%;
+        padding:55px 30px;
+    }
+
+    .letter h2{
+        font-size:51px;
+    }
+
+    .letter p{
+        font-size:20px;
+    }
+
+
+    /* FINAL */
+
+    .final h2{
+        font-size:85px;
+    }
+
+    .final p{
+        font-size:21px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     COVER
+===================================================== -->
+
+<section class="page cover">
+
+    <div class="glow pink"></div>
+    <div class="glow blue"></div>
+
+    <div class="tape pink one"></div>
+
+    <div class="sticker moon a">🌙</div>
+    <div class="sticker heart b">♡</div>
+    <div class="sticker sparkle c">✦</div>
+    <div class="sticker city d">🌃</div>
+
+    <div class="cover-center">
+
+        <div class="cover-small">
+            PRIVATE DIARY · AFTER DARK
+        </div>
+
+        <h1>
+            you & me
+        </h1>
+
+        <div class="cover-sub">
+            six months of memories<br>
+            I want to keep forever.
+        </div>
+
+        <div class="cover-note">
+
+            if our story was a night,
+            I'd never want the sun
+            to come up.
+
+            ♡
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section class="page memory">
+
+    <div class="glow purple"></div>
+
+    <div class="tape blue two"></div>
+
+    <div class="sticker heart a">♡</div>
+    <div class="sticker sparkle b">✦</div>
+    <div class="sticker ticket c">🎟️</div>
+    <div class="sticker moon d">🌙</div>
+
+    <div class="memory-title">
+        things I want<br>
+        to <span>remember.</span>
+    </div>
+
+    <div class="date">
+        05 APRIL<br>
+        six months of us ♡
+    </div>
+
+
+    <div class="photo one">
+        <img src="IMG_7559.jpeg" alt="our memory">
+    </div>
+
+
+    <div class="thought one">
+        I don't think you realise
+        how many ordinary moments
+        become special just because
+        you're in them.
+    </div>
+
+
+    <div class="photo two">
+        <img src="IMG_7560.jpeg" alt="our memory">
+    </div>
+
+
+    <div class="thought two">
+        some memories don't need
+        a perfect picture.
+        I just want to remember
+        how they felt.
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROUD OF YOU
+===================================================== -->
+
+<section class="page proud">
+
+    <div class="glow pink"></div>
+    <div class="glow blue"></div>
+
+    <div class="tape purple one"></div>
+
+    <div class="sticker star a">✦</div>
+    <div class="sticker heart b">♡</div>
+    <div class="sticker moon c">🌙</div>
+    <div class="sticker sparkle d">✧</div>
+
+    <div class="proud-title">
+        things<br>
+        I'm proud of you for.
+    </div>
+
+    <div class="proud-sub">
+        maybe I don't say it enough...<br>
+        but I notice more than you think.
+    </div>
+
+
+    <div class="proud-note proud-one">
+
+        <h3>
+            for not giving up.
+        </h3>
+
+        <p>
+            I've seen how hard you work,
+            how much you handle,
+            and how you still keep going
+            even when things aren't easy.
+        </p>
+
+    </div>
+
+
+    <div class="proud-note proud-two">
+
+        <h3>
+            for becoming you.
+        </h3>
+
+        <p>
+            I'm proud of the person you're
+            becoming. Your dreams, your
+            ambition, your effort —
+            all of it.
+        </p>
+
+    </div>
+
+
+    <div class="proud-note proud-three">
+
+        <h3>
+            for everything ahead.
+        </h3>
+
+        <p>
+            I genuinely believe there are
+            so many beautiful things waiting
+            for you.
+
+            And I hope I get to watch
+            you achieve them.
+        </p>
+
+    </div>
+
+
+    <div class="proud-thought">
+
+        one day you'll look back
+        at this version of yourself
+        and realise just how far
+        you've come.
+
+        ♡
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTOS
+===================================================== -->
+
+<section class="page night-photos">
+
+    <div class="glow blue"></div>
+
+    <div class="tape pink three"></div>
+
+    <div class="sticker camera a">📷</div>
+    <div class="sticker heart b">♡</div>
+    <div class="sticker city c">🌃</div>
+    <div class="sticker sparkle d">✦</div>
+
+    <div class="night-note">
+
+        photographs from
+        the little universe
+        that became ours.
+
+    </div>
+
+
+    <div class="photo three">
+        <img src="IMG_7561.jpeg" alt="our memory">
+    </div>
+
+
+    <div class="arrow one">
+        ← this one
+    </div>
+
+
+    <div class="photo-note one">
+
+        I wish photographs
+        could save feelings too.
+
+        I'd save this one
+        exactly as it was.
+
+        ♡
+
+    </div>
+
+
+    <div class="photo four">
+        <img src="IMG_7564.png" alt="our memory">
+    </div>
+
+
+    <div class="arrow two">
+        this memory ✦
+    </div>
+
+
+    <div class="photo-note two">
+
+        someday we'll look
+        at these again and
+        laugh about everything
+        we were back then.
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FUTURE
+===================================================== -->
+
+<section class="page future">
+
+    <div class="glow pink"></div>
+    <div class="glow blue"></div>
+
+    <div class="sticker moon a">🌙</div>
+    <div class="sticker heart b">♡</div>
+    <div class="sticker city c">🌃</div>
+    <div class="sticker sparkle d">✦</div>
+    <div class="sticker coffee e">☕</div>
+
+
+    <div class="future-title">
+
+        <div class="tiny">
+            PAGE 05 · FUTURE MEMORIES
+        </div>
+
+        <h2>
+            someday at 2:17 AM...
+        </h2>
+
+        <p>
+            little things I hope we get to do.
+        </p>
+
+    </div>
+
+
+    <div class="future-card future-one">
+
+        <h3>
+            late night city walks 🌃
+        </h3>
+
+        <p>
+            Walking through some foreign
+            city at midnight, talking about
+            absolutely everything while
+            the streets glow around us.
+        </p>
+
+    </div>
+
+
+    <div class="future-card future-two">
+
+        <h3>
+            a night drive 🚗
+        </h3>
+
+        <p>
+            Music playing, windows down,
+            city lights passing by,
+            nowhere we particularly need
+            to be.
+
+            Just us.
+        </p>
+
+    </div>
+
+
+    <div class="future-card future-three">
+
+        <h3>
+            coffee after midnight ☕
+        </h3>
+
+        <p>
+            Sitting somewhere tiny and warm,
+            sharing one table, talking for
+            hours and forgetting to check
+            the time.
+        </p>
+
+    </div>
+
+
+    <div class="future-card future-four">
+
+        <h3>
+            one beautiful night 🌙
+        </h3>
+
+        <p>
+            Somewhere far away from
+            everything familiar.
+
+            A beautiful city.
+            A beautiful view.
+            And you sitting beside me.
+        </p>
+
+    </div>
+
+
+    <div class="future-sticker"
+         style="top:260px;right:33%;">
+        let's go somewhere ♡
+    </div>
+
+    <div class="future-sticker"
+         style="bottom:300px;left:9%;">
+        someday, okay?
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section class="page letter-page">
+
+    <div class="tape pink one"></div>
+
+    <div class="sticker heart a">♡</div>
+    <div class="sticker moon b">🌙</div>
+    <div class="sticker sparkle c">✦</div>
+    <div class="sticker ticket d">🎟️</div>
+
+
+    <div class="letter">
+
+        <h2>
+            for you,
+        </h2>
+
+
+        <p>
+            Six months isn't forever,
+            but somehow you've already
+            become part of so many little
+            moments in my life.
+        </p>
+
+        <br>
+
+        <p>
+            And I want you to know something
+            I don't say enough:
+
+            <strong>
+                I'm really proud of you.
+            </strong>
+        </p>
+
+        <br>
+
+        <p>
+            Proud of how hard you try.
+            Proud of the things you've
+            survived.
+            Proud of the person you're
+            becoming.
+        </p>
+
+        <br>
+
+        <p>
+            I hope we get the late nights,
+            the random trips,
+            the city lights,
+            the sunsets,
+            the photographs,
+            the stupid jokes,
+            and all those ordinary days
+            that somehow become our
+            favourite memories.
+        </p>
+
+        <br>
+
+        <p>
+            I don't know exactly where life
+            will take us.
+
+            But if I get to choose,
+            I hope somewhere along the way
+            it's still you beside me.
+        </p>
+
+
+        <div class="signature">
+            always you ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="page final">
+
+    <div class="glow pink"></div>
+
+    <div class="sticker moon a">🌙</div>
+    <div class="sticker heart b">♡</div>
+    <div class="sticker sparkle c">✦</div>
+    <div class="sticker city d">🌃</div>
+
+
+    <div class="final-inner">
+
+        <div class="small">
+            END OF THIS LITTLE CHAPTER
+        </div>
+
+        <h2>
+            happy<br>
+            six months.
+        </h2>
+
+        <p>
+            here's to every late night,<br>
+            every photograph,<br>
+            and every memory<br>
+            we haven't made yet.
+        </p>
+
+        <div class="final-heart">
+            ♡
+        </div>
+
+        <div class="small" style="margin-top:35px;">
+            05 · APRIL · SIX MONTHS OF US
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="music" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+const music = document.getElementById("music");
+
+music.volume = 0.22;
+
+window.addEventListener("load", function(){
+
+    music.play().catch(function(){});
+
+});
+
+document.addEventListener("click", function(){
+
+    if(music.paused){
+        music.play().catch(function(){});
+    }
+
+},{once:true});
+
+</script>
+
+
+</body>
+</html>
